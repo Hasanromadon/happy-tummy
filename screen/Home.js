@@ -7,7 +7,9 @@ import RestaurantItems, { localRestaurants } from '../components/home/Restaurant
 import SearchBar from '../components/home/SearchBar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import BottomTabs from '../components/home/BottomTabs';
-const YELP_API_KEY = '-gnHeCcwgz0QczW8xFZJzh7hWUTCqUysUJgwpWobKP6SddMu5PVWSSC5lW-J3hliYsZU3N-zvuSbv0-LfYxELlguDrU0zp5yeN8W96hB5cELaYWbisnJHk-IMfcQYnYx';
+require('dotenv').config();
+
+const YELP_API_KEY = process.env.YELP_API_KEY;
 
 
 export default Home = ({ navigation }) => {

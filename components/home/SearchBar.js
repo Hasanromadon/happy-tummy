@@ -3,13 +3,13 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
+require('dotenv').config();
 const SearchBar = ({ cityHandler }) => {
 
     return (
         <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
             <GooglePlacesAutocomplete placeholder='Search'
-                query={{ key: 'AIzaSyDu_twVD16ei_oNtsqa8VeamHLnQilyzMg' }}
+                query={{ key: process.env.GOOGLE_API_KEY }}
                 onPress={(data, details = null) => {
                     console.log(data.description);
                     const city = data.description.split(',')[0];
